@@ -1,0 +1,16 @@
+export default {
+  white: '#FFFFFF',
+  black: '#000',
+  background: '#39260B',
+  primary: '#CE9760',
+  whiteFourteen: '#D9D9D9',
+  brown: '#543A20',
+  black_bg: '#16181C',
+  gray_82: '#828282',
+  white_light: '#E3E3E3',
+  banner: 'rgba(206, 151, 96, 0.49)',
+  white_smoke: '#f5f5f5',
+  sepratorColor: 'rgba(206, 151, 96, 0.48)',
+  black49: 'rgb(0,0,0,0.49)',
+  grey_8d: '#8D8B8B',
+};
