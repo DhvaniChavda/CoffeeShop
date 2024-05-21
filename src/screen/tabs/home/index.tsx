@@ -9,16 +9,23 @@ import {DUMMYSTRING, STRING} from 'src/utils';
 import {DrinkItem, HomeTagItem} from 'src/component/custom/item';
 import {navigate} from 'src/navigation/RootNavigation';
 import {Routes} from 'src/navigation/route';
+import {useIsFocused} from '@react-navigation/native';
 
 const Home = () => {
+  const isVisible = useIsFocused();
   const [tagList, setTagList] = useState(DUMMYSTRING.home_tag_list);
 
-  const [drinkList, setDrinkList] = useState(DUMMYSTRING.drink_list);
+  const [drinkList, setDrinkList] = useState<Array<object>>([]);
   useEffect(() => {
     if (tagList.length > 0) {
       onTagClick(0); // Select the first item
     }
   }, []);
+  useEffect(() => {
+    if (isVisible) {
+      setDrinkList(DUMMYSTRING.drink_list);
+    }
+  }, [isVisible]);
   const onNotificationClick = () => {
     navigate(Routes.Notification);
   };
@@ -34,8 +41,12 @@ const Home = () => {
     setTagList(updatedTags);
   };
   const onLikeClick = (index: number) => {
-    drinkList[index].isSelected = !drinkList[index].isSelected;
+    drinkList[index].isFavorite = !drinkList[index].isFavorite;
     setDrinkList([...drinkList]);
+  };
+  const onItemClick = (item: any) => {
+    console.log('onItemClick>>>', item);
+    navigate(Routes.Details, {data: item});
   };
   const renderBannerContainer = () => {
     return (
@@ -79,7 +90,14 @@ const Home = () => {
     );
   };
   const renderDrinksItem = ({item, index}: {item: any; index: number}) => {
-    return <DrinkItem item={item} index={index} onLikeClick={onLikeClick} />;
+    return (
+      <DrinkItem
+        item={item}
+        index={index}
+        onLikeClick={onLikeClick}
+        onItemClick={onItemClick}
+      />
+    );
   };
   return (
     <SafeAreaView style={styles.saContainer}>

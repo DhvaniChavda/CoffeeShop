@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLOR.primary,
     marginHorizontal: SIZES.smartWidthScale(20),
     paddingVertical: SIZES.smartScale(25),
-    paddingHorizontal: SIZES.smartWidthScale(50),
+    paddingHorizontal: SIZES.smartWidthScale(30),
   },
   tTitle: {
     fontSize: SIZES.countPixelRatio(22),
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   tInfo: {
-    fontSize: SIZES.countPixelRatio(16),
+    fontSize: SIZES.countPixelRatio(14),
     fontFamily: FONTS.REGULAR,
     color: COLOR.background,
     textAlign: 'center',

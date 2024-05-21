@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, TextInput, View} from 'react-native';
 import {COLOR, FONTS, SIZES} from 'src/theme';
 
-interface IThemeButtonProps {
+interface IThemeInputProps {
   //   ref: any;
   value: string;
   onChangeText: (text: string, type?: any) => void;
@@ -38,7 +38,7 @@ export default React.forwardRef(
       viewCustomStyle,
       inputStyle,
       onSubmitEditing,
-    }: IThemeButtonProps,
+    }: IThemeInputProps,
     ref: any,
   ) => {
     return (

@@ -4,3 +4,6 @@ export {default as ProfileItem} from './profile_item';
 export {default as SettingItem} from './setting_item';
 export {default as OrderItem} from './order_item';
 export {default as NotificationItem} from './notification_item';
+export {default as FavoriteItem} from './favorite_item';
+export {default as CartItem} from './cart_item';
+export {default as CheckoutItem} from './checkout_item';

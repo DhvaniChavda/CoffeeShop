@@ -81,6 +81,7 @@ const Profile = () => {
         isRightIcon={true}
         rightIcon={APP_IMAGES.ic_notification}
         onBackPress={onBackPress}
+        isFromTab={true}
       />
 
       <ScrollView style={styles.vContainer}>

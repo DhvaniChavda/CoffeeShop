@@ -8,23 +8,43 @@ interface IBackToolbarProps {
   isRightIcon?: boolean;
   rightIcon?: any;
   onBackPress: () => void;
+  backgroundColor?: any;
+  viewCustomStyle?: object;
+  onRightIconPress?: () => void;
+  isFromTab?: boolean;
 }
 export default ({
   title,
   isRightIcon,
   rightIcon,
   onBackPress,
+  backgroundColor,
+  viewCustomStyle,
+  onRightIconPress,
+  isFromTab,
 }: IBackToolbarProps) => {
   return (
-    <View style={styles.vMainContainer}>
+    <View
+      style={[
+        styles.vMainContainer,
+        {backgroundColor: backgroundColor ? backgroundColor : COLOR.brown},
+        viewCustomStyle,
+      ]}>
+      {isFromTab ? (
+        <View style={styles.toBack}></View>
+      ) : (
+        <TouchableOpacity
+          style={styles.toBack}
+          activeOpacity={0.8}
+          onPress={onBackPress}>
+          <Image source={APP_IMAGES.ic_back} style={styles.iBack} />
+        </TouchableOpacity>
+      )}
+      <Text style={styles.tTitle}>{title}</Text>
       <TouchableOpacity
         style={styles.toBack}
         activeOpacity={0.8}
-        onPress={onBackPress}>
-        <Image source={APP_IMAGES.ic_back} style={styles.iBack} />
-      </TouchableOpacity>
-      <Text style={styles.tTitle}>{title}</Text>
-      <TouchableOpacity style={styles.toBack} activeOpacity={0.8}>
+        onPress={onRightIconPress}>
         {isRightIcon && <Image source={rightIcon} style={styles.iRightIcon} />}
       </TouchableOpacity>
     </View>

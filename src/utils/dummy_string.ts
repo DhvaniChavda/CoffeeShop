@@ -18,6 +18,7 @@ export default {
       price: '$18',
       name: 'Arabica',
       desc: 'Lorem ipsum dolor sit amet cons ',
+      isFavorite: false,
     },
 
     {
@@ -26,6 +27,7 @@ export default {
       price: '$20',
       name: 'Robusta',
       desc: 'Lorem ipsum dolor sit amet cons ',
+      isFavorite: false,
     },
     {
       id: 3,
@@ -33,6 +35,7 @@ export default {
       price: '$15',
       name: 'Excelsa',
       desc: 'Lorem ipsum dolor sit amet cons ',
+      isFavorite: false,
     },
     {
       id: 4,
@@ -40,6 +43,7 @@ export default {
       price: '$12',
       name: 'Liberica',
       desc: 'Lorem ipsum dolor sit amet cons ',
+      isFavorite: false,
     },
   ],
   my_order_list: [
@@ -189,4 +193,60 @@ export default {
       created_at: '2024-4-20 15:30:10',
     },
   ],
+  cart_list: [
+    {
+      id: 1,
+      image: APP_IMAGES.ic_arabica,
+      item_name: 'Arabica',
+      ingridients: 'Milk',
+      price: 20,
+      qty: 1,
+    },
+    {
+      id: 2,
+      image: APP_IMAGES.ic_liberica,
+      item_name: 'Liberica',
+      ingridients: 'Cheese-cream',
+      price: 50,
+      qty: 2,
+    },
+    {
+      id: 3,
+      image: APP_IMAGES.ic_excelsa,
+      item_name: 'Excelsa',
+      ingridients: 'Ice-cream',
+      price: 60,
+      qty: 4,
+    },
+  ],
+  checkOutDetails: {
+    address: '1910, wien stadt, At',
+    card_details: 'Credit or debit',
+    cart_list: [
+      {
+        id: 1,
+        image: APP_IMAGES.ic_arabica,
+        item_name: 'Arabica',
+        ingridients: 'Milk',
+        price: 20,
+        qty: 1,
+      },
+      {
+        id: 2,
+        image: APP_IMAGES.ic_liberica,
+        item_name: 'Liberica',
+        ingridients: 'Cheese-cream',
+        price: 50,
+        qty: 2,
+      },
+      {
+        id: 3,
+        image: APP_IMAGES.ic_excelsa,
+        item_name: 'Excelsa',
+        ingridients: 'Ice-cream',
+        price: 60,
+        qty: 4,
+      },
+    ],
+  },
 };

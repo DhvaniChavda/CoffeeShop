@@ -3,26 +3,15 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {APP_IMAGES} from 'src/assets/images';
 import {COLOR, FONTS, SIZES} from 'src/theme';
 
-interface ITagItemProps {
+interface IFavItemProps {
   item: any;
   index: number;
   onLikeClick: (arg: number) => void;
-  viewCustomstyle?: object;
-  onItemClick: (arg: any) => void;
 }
 
-export default ({
-  item,
-  index,
-  onLikeClick,
-  viewCustomstyle,
-  onItemClick,
-}: ITagItemProps) => {
+export default ({item, index, onLikeClick}: IFavItemProps) => {
   return (
-    <TouchableOpacity
-      style={[styles.vMainContainer, viewCustomstyle]}
-      activeOpacity={0.8}
-      onPress={() => onItemClick(item)}>
+    <View style={[styles.vMainContainer]}>
       <Image source={item.image} style={styles.iImage} />
       <TouchableOpacity
         style={styles.toLike}
@@ -39,13 +28,12 @@ export default ({
         </View>
         <Text style={styles.tPrice}>{item.price}</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 const styles = StyleSheet.create({
   vMainContainer: {
     backgroundColor: COLOR.primary,
-    borderRadius: SIZES.countPixelRatio(10),
     paddingHorizontal: SIZES.countPixelRatio(15),
     paddingTop: SIZES.countPixelRatio(10),
   },

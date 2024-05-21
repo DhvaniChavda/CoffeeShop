@@ -11,13 +11,9 @@ import {STRING} from 'src/utils';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Splash = () => {
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     navigate(Routes.Intro);
-  //   }, 2000);
-  // }, []);
   const onGetStartedClick = () => {
     replace(Routes.Intro);
+    // replace(Routes.Dashboard);
   };
   return (
     <SafeAreaView

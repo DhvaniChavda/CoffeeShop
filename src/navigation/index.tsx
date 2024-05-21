@@ -21,6 +21,10 @@ import InviteFriend from 'src/screen/tabs/profile/inviteFriend';
 import {BackHandler, ToastAndroid} from 'react-native';
 import {STRING} from 'src/utils';
 import Notification from 'src/screen/tabs/notification ';
+import Details from 'src/screen/tabs/home/details';
+import Checkout from 'src/screen/tabs/cart/checkout';
+import Payment from 'src/screen/tabs/cart/payment';
+import TrackOrder from 'src/screen/tabs/cart/trackOrder';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -135,6 +139,10 @@ export default (): JSX.Element | null => {
         <Stack.Screen name={Routes.SettingScreen} component={SettingScreen} />
         <Stack.Screen name={Routes.InviteFriend} component={InviteFriend} />
         <Stack.Screen name={Routes.Notification} component={Notification} />
+        <Stack.Screen name={Routes.Details} component={Details} />
+        <Stack.Screen name={Routes.Checkout} component={Checkout} />
+        <Stack.Screen name={Routes.Payment} component={Payment} />
+        <Stack.Screen name={Routes.TrackOrder} component={TrackOrder} />
       </Stack.Navigator>
     </NavigationContainer>
   );
